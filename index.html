@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LostLink | Smart Lost & Found Portal</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===========================
+            NAVIGATION BAR
+    ============================ -->
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-location-dot"></i>
+
+        <span>LostLink</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#report">Report Item</a></li>
+
+        <li><a href="#browse">Browse Items</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <button class="btn-login">Login</button>
+
+        <button class="btn-register">Register</button>
+      </div>
+
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- ===========================
+            HERO SECTION
+    ============================ -->
+
+    <section id="home" class="hero">
+      <!-- Background Shapes -->
+
+      <div class="circle circle1"></div>
+
+      <div class="circle circle2"></div>
+
+      <div class="circle circle3"></div>
+
+      <div class="hero-container">
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-left">
+          <span class="tag">
+            <i class="fa-solid fa-bolt"></i>
+
+            Smart AWS Serverless Project
+          </span>
+
+          <h1>
+            Lost Something?
+
+            <br />
+
+            <span>We'll Help You Find It.</span>
+          </h1>
+
+          <p>
+            LostLink is a modern cloud-powered Lost & Found Portal built using
+            AWS Lambda, Amazon S3, DynamoDB and API Gateway. Report missing
+            items, browse found belongings and reconnect people with their
+            valuables quickly.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#report" class="primary-btn">
+              <i class="fa-solid fa-plus"></i>
+
+              Report Item
+            </a>
+
+            <a href="#browse" class="secondary-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              Browse Items
+            </a>
+          </div>
+
+          <!-- Features -->
+
+          <div class="hero-features">
+            <div>
+              <i class="fa-solid fa-cloud"></i>
+
+              AWS Cloud
+            </div>
+
+            <div>
+              <i class="fa-solid fa-database"></i>
+
+              DynamoDB
+            </div>
+
+            <div>
+              <i class="fa-solid fa-image"></i>
+
+              Amazon S3
+            </div>
+
+            <div>
+              <i class="fa-solid fa-bolt"></i>
+
+              Serverless
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <i class="fa-solid fa-box-open"></i>
+
+              Recently Reported
+            </div>
+
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"
+              alt="Lost Item"
+            />
+
+            <div class="hero-card-content">
+              <h3>Leather Wallet</h3>
+
+              <p>📍 College Library</p>
+
+              <span class="status lost"> LOST </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down -->
+
+      <div class="scroll-down">
+        <a href="#stats">
+          <i class="fa-solid fa-angle-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===========================
+            STATISTICS SECTION
+    ============================ -->
+
+    <section id="stats" class="stats-section">
+      <div class="section-title">
+        <h2>LostLink Dashboard</h2>
+
+        <p>Live statistics from our AWS Serverless Lost & Found Portal</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">
+            <i class="fa-solid fa-box"></i>
+          </div>
+
+          <h3 id="totalItems">0</h3>
+
+          <p>Total Items</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon red">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
+
+          <h3 id="lostItems">0</h3>
+
+          <p>Lost Items</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <h3 id="foundItems">0</h3>
+
+          <p>Found Items</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon orange">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+
+          <h3 id="returnedItems">0</h3>
+
+          <p>Returned</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+            SEARCH SECTION
+    ============================ -->
+
+    <section class="search-section">
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by item title..."
+          />
+        </div>
+
+        <select id="statusFilter">
+          <option value="All">All Status</option>
+
+          <option value="Lost">Lost</option>
+
+          <option value="Found">Found</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- ===========================
+            REPORT ITEM SECTION
+    ============================ -->
+
+    <section id="report" class="report-section">
+      <div class="section-title">
+        <h2>Report Lost / Found Item</h2>
+
+        <p>Upload details to help reunite owners with their belongings.</p>
+      </div>
+
+      <div class="report-container">
+        <form id="reportForm">
+          <!-- Upload Area -->
+
+          <div class="upload-box" id="uploadBox">
+            <input type="file" id="imageInput" accept="image/*" hidden />
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <h3>Drag & Drop Image</h3>
+
+            <p>or click to upload</p>
+
+            <button type="button" id="chooseImage" class="upload-btn">
+              Choose Image
+            </button>
+          </div>
+
+          <!-- Preview -->
+
+          <div class="image-preview">
+            <img id="previewImage" src="" alt="Preview" />
+          </div>
+
+          <!-- Form Grid -->
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label> Item Title </label>
+
+              <input
+                type="text"
+                id="itemTitle"
+                placeholder="Enter item title"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Concern Person </label>
+
+              <input
+                type="text"
+                id="concernPerson"
+                placeholder="Owner / Finder Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Phone Number </label>
+
+              <input type="tel" id="phone" placeholder="9876543210" required />
+            </div>
+
+            <div class="form-group">
+              <label> Location </label>
+
+              <input
+                type="text"
+                id="location"
+                placeholder="Where was it lost/found?"
+                required
+              />
+            </div>
+
+            <div class="form-group full-width">
+              <label> Description </label>
+
+              <textarea
+                id="description"
+                rows="5"
+                placeholder="Describe the item..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label> Status </label>
+
+              <select id="status">
+                <option value="Lost">Lost</option>
+
+                <option value="Found">Found</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit -->
+
+          <div class="submit-area">
+            <button type="submit" class="submit-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+
+              Submit Report
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===========================
+            BROWSE ITEMS
+    ============================ -->
+
+    <section id="browse" class="browse-section">
+      <div class="section-title">
+        <h2>Browse Reported Items</h2>
+
+        <p>Search through recently reported lost and found items.</p>
+      </div>
+
+      <div id="itemsContainer" class="items-grid">
+        <!-- JavaScript will dynamically generate cards here -->
+      </div>
+
+      <!-- Empty State -->
+
+      <div id="emptyState" class="empty-state">
+        <i class="fa-solid fa-box-open"></i>
+
+        <h3>No Items Available</h3>
+
+        <p>No lost or found items have been reported yet.</p>
+      </div>
+    </section>
+
+    <!-- ===========================
+            ITEM DETAILS MODAL
+    ============================ -->
+
+    <div id="itemModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close-modal"> &times; </span>
+
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="Lost Item" />
+        </div>
+
+        <div class="modal-details">
+          <h2 id="modalTitle">Item Name</h2>
+
+          <span id="modalStatus" class="status-badge"> LOST </span>
+
+          <p>
+            <strong>Description:</strong>
+
+            <span id="modalDescription"></span>
+          </p>
+
+          <p>
+            <strong>Concern Person:</strong>
+
+            <span id="modalPerson"></span>
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+
+            <span id="modalPhone"></span>
+          </p>
+
+          <p>
+            <strong>Location:</strong>
+
+            <span id="modalLocation"></span>
+          </p>
+
+          <div class="modal-buttons">
+            <button id="deleteItemBtn" class="delete-btn">
+              <i class="fa-solid fa-trash"></i>
+
+              Delete Item
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===========================
+            DELETE CONFIRM MODAL
+    ============================ -->
+
+    <div id="deleteModal" class="modal">
+      <div class="delete-modal-content">
+        <i class="fa-solid fa-circle-exclamation"></i>
+
+        <h2>Delete Item?</h2>
+
+        <p>This action cannot be undone.</p>
+
+        <div class="delete-buttons">
+          <button id="cancelDelete" class="cancel-btn">Cancel</button>
+
+          <button id="confirmDelete" class="confirm-delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===========================
+            CONTACT SECTION
+    ============================ -->
+
+    <section id="contact" class="contact-section">
+      <div class="section-title">
+        <h2>Contact LostLink</h2>
+
+        <p>Need help? Reach out to the LostLink support team.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+
+          <h3>Email</h3>
+
+          <p>support@lostlink.com</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+
+          <h3>Phone</h3>
+
+          <p>+91 98765 43210</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+
+          <h3>Location</h3>
+
+          <p>Symbiosis Institute of Technology</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h2>
+            <i class="fa-solid fa-location-dot"></i>
+
+            LostLink
+          </h2>
+
+          <p>
+            A Smart Serverless Lost & Found Portal built using AWS Lambda, API
+            Gateway, Amazon S3 and DynamoDB.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+
+          <a href="#home"> Home </a>
+
+          <a href="#report"> Report Item </a>
+
+          <a href="#browse"> Browse Items </a>
+
+          <a href="#contact"> Contact </a>
+        </div>
+
+        <div class="footer-services">
+          <h3>Powered By</h3>
+
+          <p>
+            <i class="fa-brands fa-aws"></i>
+
+            AWS Lambda
+          </p>
+
+          <p>
+            <i class="fa-solid fa-database"></i>
+
+            Amazon DynamoDB
+          </p>
+
+          <p>
+            <i class="fa-solid fa-cloud"></i>
+
+            Amazon S3
+          </p>
+
+          <p>
+            <i class="fa-solid fa-server"></i>
+
+            API Gateway
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Connect</h3>
+
+          <div class="social-icons">
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 LostLink | Smart Lost & Found Portal | Built with ❤️ using AWS
+          Serverless Services.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===========================
+            LOADING SPINNER
+    ============================ -->
+
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loader">
+        <div class="loader-circle"></div>
+
+        <p>Loading LostLink...</p>
+      </div>
+    </div>
+
+    <!-- ===========================
+            TOAST NOTIFICATION
+    ============================ -->
+
+    <div id="toast" class="toast">
+      <div class="toast-icon">
+        <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+      </div>
+
+      <div class="toast-content">
+        <h4 id="toastTitle">Success</h4>
+
+        <p id="toastMessage">Operation completed successfully.</p>
+      </div>
+    </div>
+
+    <!-- ===========================
+            BACK TO TOP BUTTON
+    ============================ -->
+
+    <button id="backToTop" class="back-to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===========================
+            DARK MODE TOGGLE
+    ============================ -->
+
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- ===========================
+            MOBILE MENU
+    ============================ -->
+
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-header">
+        <h2>
+          <i class="fa-solid fa-location-dot"></i>
+
+          LostLink
+        </h2>
+
+        <button id="closeMenu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav>
+        <a href="#home">
+          <i class="fa-solid fa-house"></i>
+
+          Home
+        </a>
+
+        <a href="#report">
+          <i class="fa-solid fa-circle-plus"></i>
+
+          Report Item
+        </a>
+
+        <a href="#browse">
+          <i class="fa-solid fa-box-open"></i>
+
+          Browse Items
+        </a>
+
+        <a href="#contact">
+          <i class="fa-solid fa-envelope"></i>
+
+          Contact
+        </a>
+      </nav>
+    </div>
+
+    <!-- ===========================
+            MOBILE MENU BACKDROP
+    ============================ -->
+
+    <div id="menuBackdrop" class="menu-backdrop"></div>
+
+    <!-- ===========================
+            JAVASCRIPT
+    ============================ -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
