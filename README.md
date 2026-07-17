@@ -4,11 +4,20 @@ LostLink is a smart cloud-based Lost and Found Portal designed to simplify the p
 
 The platform provides a centralized system where users can report lost or found items and search for potential matches efficiently.
 
-## 🌐 Live Demo
+---
 
-👉 **[View LostLink Live](http://ec2-13-233-121-145.ap-south-1.compute.amazonaws.com/)**
+## 📸 Screenshots
 
+### 🌐 LostLink Web Interface
+![LostLink Web Interface](https://github.com/user-attachments/assets/89719db8-be28-4b2f-a881-014645b8b32e)
+![LostLink Web Interface](https://github.com/user-attachments/assets/a1658ada-f35a-4ec1-bf53-fcf156babb89)
 
+### 🔍 Item Search and Reporting
+![LostLink Item Search](https://github.com/user-attachments/assets/f927b130-fac8-416b-9354-b2493efd945b)
+![LostLink Item Search](https://github.com/user-attachments/assets/b6045f3a-7ec0-4624-a601-d1565db4a5eb)
+![LostLink Item Search](https://github.com/user-attachments/assets/3073888d-7c98-4f45-a2e8-ab1342a1c6b7)
+
+---
 
 ## 🚀 Features
 
